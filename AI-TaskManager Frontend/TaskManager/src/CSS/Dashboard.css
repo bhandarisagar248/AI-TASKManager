@@ -1,0 +1,41 @@
+.task-card, .category-card, .tracking-card {
+  transition: all 0.3s ease-in-out;
+}
+
+.task-card:hover,
+.category-card:hover,
+.tracking-card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.task-card ul::-webkit-scrollbar,
+.category-card ul::-webkit-scrollbar,
+.tracking-card ul::-webkit-scrollbar {
+  width: 6px;
+}
+.task-card ul::-webkit-scrollbar-thumb,
+.category-card ul::-webkit-scrollbar-thumb,
+.tracking-card ul::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 8px;
+}
+.task-card,.tracking-card{
+    max-width: 520px;
+}
+.category-card{
+     max-width: 410px;
+     max-height: 332px;
+     
+}
+.header_bar_Top{
+  border: none !important;
+  background: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  background: var(--dash-bg);
+}
+.Mail{
+  color: var(--text-color);
+}

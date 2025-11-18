@@ -1,0 +1,195 @@
+
+ /* =========================================
+   🌗 Modern Profile Page – Light + Dark Mode
+   ========================================= */
+
+:root {
+  /* Light Theme */
+  --bg-color: #f6f8fa;
+  --card-bg: #ffffff;
+  --text-color: #1e293b;
+  --muted-text: #475569;
+  --primary-color: #1b4332;
+  --accent-color: #86efac;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  --fieldset-bg: #7bca82;
+  --dash-bg:var(--card-bg);
+  --login-bg:#4070f4;
+  --track-hover-bg:#374151;
+  --root-bg:#fefce8;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme */
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: #e2e8f0;
+  --muted-text: #94a3b8;
+  --primary-color: #4ade80;
+  --accent-color: #14532d;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+   --fieldset-bg: #1e293b;
+     --dash-bg:#1e293b;
+   --login-bg: #0f172a;
+   --track-hover-bg:#374151;
+   --root-bg:#0f172a;
+}
+
+/* Smooth transitions when switching theme */
+* {
+  transition: background-color 0.4s ease, color 0.3s ease, border 0.3s ease;
+}
+
+/* -------------------- Page Layout -------------------- */
+body {
+  background-color: var(--bg-color);
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container_container {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 2rem;
+   width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+/* -------------------- Headings -------------------- */
+h2, h3, legend {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* -------------------- Profile Header -------------------- */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-bg);
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.profile-header img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.profile-header h4 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: var(--text-color);
+}
+
+.profile-header .text-muted {
+  color: var(--muted-text) !important;
+}
+
+/* -------------------- Profile Sections -------------------- */
+#personal_info, #address {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#personal_info:hover, #address:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Section titles */
+#personal_info h3, #address h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Inputs & selects */
+input.form-control, select.form-select {
+  background-color: transparent;
+  color: var(--text-color);
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  border-radius: 0;
+  padding: 0.4rem 0;
+}
+
+[data-theme="dark"] input.form-control,
+[data-theme="dark"] select.form-select {
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+input:disabled, select:disabled {
+  opacity: 0.7;
+}
+
+/* Labels */
+#personal_info span, #address span {
+  font-size: 0.95rem;
+  color: var(--muted-text);
+  font-weight: 600;
+      margin-right: 0.5rem;
+}
+
+/* -------------------- Buttons -------------------- */
+.btn-success {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.45rem 1.3rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.btn-success:hover {
+  background-color: var(--accent-color) !important;
+  color: var(--text-color) !important;
+  transform: translateY(-1px) scale(1.05);
+}
+
+/* -------------------- Transitions -------------------- */
+fieldset {
+  border: none !important;
+  background: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  background: var(--root-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+  .profile-header {
+    padding: 1.5rem;
+  }
+
+  #personal_info, #address {
+    padding: 1.25rem;
+  }
+
+  .profile-header img {
+    width: 100px;
+    height: 100px;
+  }
+}
+

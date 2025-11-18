@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="titleDesc">
+  <title id="titleDesc">AI Task Manager</title>
+  <desc>Premium logo: rounded square with gradient, stylized AI monogram and check mark</desc>
+
+  <!-- background rounded square with smooth gradient -->
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0ea5a4"/>
+      <stop offset="55%" stop-color="#0b7285"/>
+      <stop offset="100%" stop-color="#06283d"/>
+    </linearGradient>
+
+    <!-- gold accent -->
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#fca311"/>
+    </linearGradient>
+
+    <!-- soft shadow for depth -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#052639" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- rounded background -->
+  <rect x="2" y="2" width="60" height="60" rx="10" ry="10" fill="url(#g1)"/>
+
+  <!-- inner glossy ring -->
+  <g opacity="0.12">
+    <rect x="6" y="6" width="52" height="52" rx="8" ry="8" fill="#fff"/>
+  </g>
+
+  <!-- circular badge for the check / accent -->
+  <g transform="translate(36,22)">
+    <circle cx="0" cy="0" r="10" fill="url(#gold)" filter="url(#shadow)"/>
+    <!-- check mark -->
+    <path d="M -5 0 L -1.5 3.5 L 5 -4" fill="none" stroke="#06283d" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- AI monogram: bold, minimal and legible -->
+  <g transform="translate(14,44)">
+    <!-- large A (stylized) -->
+    <path d="M4 -18 L12 0 L20 -18 L16 -18 L12 -7 L8 -18 Z" fill="#fff" transform="scale(1.2) translate(0,-2)"/>
+    <!-- I letter: vertical bar -->
+    <rect x="28" y="-18" width="4.8" height="18" rx="1" fill="#fff"/>
+  </g>
+
+  <!-- subtle highlight line -->
+  <path d="M8 14 C20 10, 44 10, 56 14" stroke="#ffffff22" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+</svg>
