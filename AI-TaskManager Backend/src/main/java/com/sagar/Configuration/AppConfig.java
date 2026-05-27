@@ -1,4 +1,4 @@
-package net.javaguides.ems.Configuration;
+package com.sagar.Configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
