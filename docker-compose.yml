@@ -8,9 +8,6 @@ services:
     container_name: AI-TaskManager-frontend
     ports:
       - "5173:5173"
-    volumes:
-      - ./AI-TaskManager Frontend/TaskManager:/app
-      - /app/node_modules
     depends_on:
       - backend
 
@@ -23,7 +20,7 @@ services:
     depends_on:
       - mongodb
     environment:
-      SPRING_DATA_MONGODB_URI: mongodb://root:root@mongodb:27017/chronos_db?authSource=admin
+      SPRING_DATA_MONGODB_URI: mongodb://root:root@mongodb:27017/taskmanager_db?authSource=admin
 
   mongodb:
     image: mongo:7

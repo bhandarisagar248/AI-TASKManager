@@ -1,20 +1,17 @@
-# Use Node.js official image
 FROM node:20
 
-# Set working directory
 WORKDIR /app
 
-# Copy package files
 COPY package*.json ./
 
-# Install dependencies
 RUN npm install
 
-# Copy project files
 COPY . .
 
-# Expose Vite default port
+RUN npm run build
+
+RUN npm install -g serve
+
 EXPOSE 5173
 
-# Start Vite development server
-CMD ["npm", "run", "dev", "--", "--host"]
+CMD ["serve", "-s", "dist", "-l", "5173"]
