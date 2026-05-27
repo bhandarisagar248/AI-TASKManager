@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+
+  frontend:
+    build:
+      context: ./AI-TaskManager Frontend/TaskManager
+    container_name: AI-TaskManager-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./AI-TaskManager Frontend/TaskManager:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./AI-TaskManager Backend
+    container_name: AI-TaskManager-backend
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongodb
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://root:root@mongodb:27017/chronos_db?authSource=admin
+
+  mongodb:
+    image: mongo:7
+    container_name: AI-TaskManager-mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: taskmanager_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
